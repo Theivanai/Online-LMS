@@ -60,7 +60,7 @@ const ForgetPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:8000/api/admin/forgotpassword`, { email });
+            const res = await axios.post(`${process.env.REACT_BASE_URL}/api/admin/forgotpassword`, { email });
             setmessage(res.data.message);
         } catch (err) {
             setmessage(err.response?.data?.message || 'Error occured');

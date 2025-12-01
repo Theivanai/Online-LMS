@@ -20,7 +20,7 @@ const Returnbook = () => {
                 }
 
 
-                const response = await axios.get(`http://localhost:8000/api/book/admin-issued`, {
+                const response = await axios.get(`${process.env.REACT_BASE_URL}/api/book/admin-issued`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -51,7 +51,7 @@ const Returnbook = () => {
             }
 
             await axios.put(
-                `http://localhost:8000/api/book/return/${bookId}`,
+                `${process.env.REACT_BASE_URL}/api/book/return/${bookId}`,
                 {},
                 {
                     headers: {

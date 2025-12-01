@@ -80,7 +80,7 @@ const ResetPassword = () => {
     const handleReset = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:8000/api/admin/resetpassword/${token}`, { password });
+            const res = await axios.post(`${process.env.REACT_BASE_URL}/api/admin/resetpassword/${token}`, { password });
             setmessage(res.data.message);
         } catch (err) {
             setmessage(err.response?.data?.message || "Error occured")

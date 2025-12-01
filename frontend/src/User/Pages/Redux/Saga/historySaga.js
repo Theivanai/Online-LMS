@@ -10,7 +10,7 @@ function* fetchHistoryWorker() {
     try {
         const token = localStorage.getItem('token');
 
-        const response = yield call(() => axios.get(`http://localhost:8000/api/users/book-history`, {
+        const response = yield call(() => axios.get(`${process.env.REACT_BASE_URL}/api/users/book-history`, {
             headers: { Authorization: `Bearer ${token}` },
         })
     );

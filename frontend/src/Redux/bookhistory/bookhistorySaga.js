@@ -10,7 +10,7 @@ import {
 function* fetchBookHistoryWorker() {
   try {
     const response = yield call(() =>
-      axios.get('http://localhost:8000/api/book-history/all', {
+      axios.get(`${process.env.REACT_BASE_URL}/api/book-history/all`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },

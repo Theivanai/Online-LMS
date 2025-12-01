@@ -46,7 +46,7 @@ import {
 function* fetchAdminDashboardSaga() {
   try {
     const token = localStorage.getItem('token');
-    const response = yield call(axios.get, 'http://localhost:8000/api/dashboard/metrics', {
+    const response = yield call(axios.get, `${process.env.REACT_BASE_URL}/api/dashboard/metrics`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -60,7 +60,7 @@ function* fetchAdminDashboardSaga() {
 // ADMIN REGISTRATION SAGA
 function* registerAdminSaga(action) {
   try {
-    const response = yield call(axios.post, 'http://localhost:8000/api/admin/admin-register', action.payload);
+    const response = yield call(axios.post, `${process.env.REACT_BASE_URL}/api/admin/admin-register`, action.payload);
     yield put(registerAdminSuccess());
     localStorage.setItem('token', response.data.token);
     toast.success('Admin added successfully!');
@@ -79,7 +79,7 @@ function* registerAdminSaga(action) {
 let loginToastShown = false;
 function* handleAdminLogin(action) {
   try {
-    const response = yield call(axios.post, `http://localhost:8000/api/admin/admin/login`, {
+    const response = yield call(axios.post, `${process.env.REACT_BASE_URL}/api/admin/admin/login`, {
       ...action.payload,
       role: 'admin',
     });

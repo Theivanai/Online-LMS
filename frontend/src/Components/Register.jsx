@@ -11,12 +11,12 @@ const RegisterForm = () => {
     const [password, setpassword] = useState('');
 
     const navigate = useNavigate();
- 
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-            .post(`${process.env.REACT_APP_BASE_URL}/api/user/register`, { name, email, password })
+            .post(`${process.env.REACT_BASE_URL}/api/admin/admin-register`, { name, email, password })
             .then((res) => {
                 toast.success("User Registered")
                 navigate("/login");
@@ -42,7 +42,7 @@ const RegisterForm = () => {
             }}
         >
             <form onSubmit={handleSubmit} className="register-form">
-                <h3>Register</h3>
+                <h3>Register Problem Check and Use</h3>
                 <input type="text" className="name_register" placeholder="Name" value={name} onChange={(e) => setname(e.target.value)} required />
                 <input type="email" className="email_register" placeholder="Email" value={email} onChange={(e) => setemail(e.target.value)} required />
                 <input type="password" className="password_register" placeholder="Password" value={password} onChange={(e) => setpassword(e.target.value)} required />

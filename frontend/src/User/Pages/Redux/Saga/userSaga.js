@@ -34,7 +34,7 @@ import {
 // =====================
 function* loginUserSaga(action) {
     try {
-        const response = yield call(axios.post, 'http://localhost:8000/api/admin/user/login', {
+        const response = yield call(axios.post, `${process.env.REACT_BASE_URL}/api/admin/user/login`, {
             ...action.payload,
             role: 'user',
         });
@@ -61,7 +61,7 @@ function* fetchUserProfileAndHistory() {
         const token = localStorage.getItem('token');
         const config = { headers: { Authorization: `Bearer ${token}` } };
 
-        const profileResponse = yield call(axios.get, `http://localhost:8000/api/users/profile`, config);
+        const profileResponse = yield call(axios.get, `${process.env.REACT_BASE_URL}/api/users/profile`, config);
         yield put(fetchUserProfileSuccess(profileResponse.data));
 
 
@@ -80,9 +80,9 @@ function* fetchUserDashboard() {
         const config = { headers: { Authorization: `Bearer ${token}` } };
 
         const [booksRes, purchasedRes, paymentsRes] = yield all([
-            call(axios.get, `http://localhost:8000/api/book/available`),
-            call(axios.get, `http://localhost:8000/api/mybooks/count`, config),
-            call(axios.get, `http://localhost:8000/api/payment/user-summary`, config),
+            call(axios.get, `${process.env.REACT_BASE_URL}/api/book/available`),
+            call(axios.get, `${process.env.REACT_BASE_URL}/api/mybooks/count`, config),
+            call(axios.get, `${process.env.REACT_BASE_URL}/api/payment/user-summary`, config),
         ]);
 
         const dashboardData = {
@@ -107,7 +107,7 @@ function* handleChangePassword(action) {
         const { currentPassword, newPassword } = action.payload;
         const response = yield call(() =>
             axios.put(
-                'http://localhost:8000/api/users/change-password',
+                `${process.env.REACT_BASE_URL}/api/users/change-password`,
                 { currentPassword, newPassword },
                 {
                     headers: {
@@ -133,7 +133,7 @@ function* registerUserSaga(action) {
         }
 
         yield call(() =>
-            axios.post(`http://localhost:8000/api/user/register`, formData, {
+            axios.post(`${process.env.REACT_BASE_URL}/api/user/register`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             })
         );

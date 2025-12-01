@@ -1,4 +1,4 @@
-import { call, put, takeLatest, delay } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 import {
     fetchUsersRequest,
@@ -9,7 +9,7 @@ import {
 
 function* fetchUsersSaga() {
     try {
-        const response = yield call(axios.get, 'http://localhost:8000/api/user/all', {
+        const response = yield call(axios.get, `${process.env.REACT_BASE_URL}/api/user/all`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },

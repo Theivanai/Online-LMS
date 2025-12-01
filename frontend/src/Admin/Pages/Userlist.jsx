@@ -147,7 +147,7 @@ function UserList() {
                                         <td>
                                             {user.profileImage ? (
                                                 <img
-                                                    src={`http://localhost:8000/uploads/${user.profileImage}`}
+                                                    src={`${process.env.REACT_BASE_URL}/uploads/${user.profileImage}`}
                                                     alt="Profile"
                                                     className={styles.profileImg}
                                                 />

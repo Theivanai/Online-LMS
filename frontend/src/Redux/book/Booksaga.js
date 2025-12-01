@@ -96,14 +96,14 @@ import {
   addBookSuccess,
   addBookFailure,
   updateBookRequest,
-  updateBookSuccess,
-  updateBookFailure,
+  // updateBookSuccess,
+  // updateBookFailure,
 } from './bookSlice';
 
 // 🔹 Fetch All Books
 function* handleFetchBooksSaga() {
   try {
-    const response = yield call(() => axios.get('http://localhost:8000/api/book/all'));
+    const response = yield call(() => axios.get(`${process.env.REACT_BASE_URL}/api/book/all`));
     yield put(fetchBooksSuccess(response.data));
   } catch (error) {
     yield put(fetchBooksFailure(error.message));
@@ -125,7 +125,7 @@ function* handleAddBookSaga(action) {
     if (data.bookFile) formData.append('bookFile', data.bookFile);
 
     yield call(() =>
-      axios.post('http://localhost:8000/api/book/add', formData, {
+      axios.post(`${process.env.REACT_BASE_URL}/api/book/add`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -154,7 +154,7 @@ function* handleUpdateBookSaga(action) {
     if (files?.image) formData.append("image", files.image);
     if (files?.bookFile) formData.append("bookFile", files.bookFile);
 
-    yield call(axios.put, `http://localhost:8000/api/book/update/${id}`, formData, {
+    yield call(axios.put, `${process.env.REACT_BASE_URL}/api/book/update/${id}`, formData, {
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("token")}`,
         "Content-Type": "multipart/form-data",
@@ -174,7 +174,7 @@ function* handleDeleteBookSaga(action) {
   try {
     const id = action.payload;
     yield call(() =>
-      axios.delete(`http://localhost:8000/api/book/delete/${id}`, {
+      axios.delete(`${process.env.REACT_BASE_URL}/api/book/delete/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       })
     );

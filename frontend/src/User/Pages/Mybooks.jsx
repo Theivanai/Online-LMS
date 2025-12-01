@@ -16,7 +16,7 @@ const MyBooks = () => {
     }, [dispatch]);
 
     const handleView = (pdfPath) => {
-        setSelectedPDF(`http://localhost:8000/uploads/pdfs/${pdfPath}?token=${localStorage.getItem("token")}#toolbar=0&navpanes=0&scrollbar=0`);
+        setSelectedPDF(`${process.env.REACT_BASE_URL}/uploads/pdfs/${pdfPath}?token=${localStorage.getItem("token")}#toolbar=0&navpanes=0&scrollbar=0`);
         setshowmodal(true);
     };
 
@@ -55,7 +55,7 @@ const MyBooks = () => {
                                     <td>
                                         {book.bookimg ? (
                                             <img
-                                                src={`http://localhost:8000/uploads/images/${book.bookimg}`}
+                                                src={`${process.env.REACT_BASE_URL}/uploads/images/${book.bookimg}`}
                                                 alt={book.bookTitle}
                                                 style={{ width: '60px', height: '80px' }}
                                                 className='rounded'
