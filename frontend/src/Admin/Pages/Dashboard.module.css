@@ -1,0 +1,90 @@
+/* .adminname {
+    font-size: 24px;
+    color: red;
+} */
+
+
+/* Bell Button */
+.bellBtn {
+    position: relative;
+    background: #fff;
+    border: none;
+}
+
+.bellWrapper {
+    position: relative;
+}
+
+/* Notification Badge */
+.bellBadge {
+    position: absolute !important;
+    top: -12px !important;
+    right: -12px !important;
+    /* z-index: 50; */
+}
+
+
+/* Notification Dropdown */
+.notificationCard {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    margin-top: 8px;
+    z-index: 999;
+}
+
+/* Greeting Section */
+.adminname {
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Summary Cards */
+.cardPrimary {
+    background-color: #007bff !important;
+    color: #fff !important;
+}
+
+.cardWarning {
+    background-color: #ffc107 !important;
+    color: #fff !important;
+}
+
+/* Tables */
+.tableHeader {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.tableLink {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Pie Chart Wrapper */
+.pieWrapper {
+    width: 250px;
+    height: 250px;
+}
+
+/* Books Summary Card */
+.summaryCard {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.summaryHeader {
+    background: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Container Fix */
+.notificationContainer {
+    position: relative;
+}
+
+/* Optional spacing helper */
+.mt10 {
+    margin-top: 10px;
+}

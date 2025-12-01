@@ -1,0 +1,197 @@
+/* .booklist_table {
+    width: 100%;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+/* Booklist.css */
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Heading */
+h3 {
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Table */
+.table-responsive {
+  overflow-x: auto;
+  /* allow horizontal scroll on small screens */
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 700px;
+  /* ensures horizontal scroll if screen is narrow */
+}
+
+.table th,
+.table td {
+  vertical-align: middle !important;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.table th {
+  background-color: #cce5ff;
+  /* Bootstrap primary lighten */
+  color: #000;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f8f9fa;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e2e6ea;
+}
+
+/* Buttons */
+.btn {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border: none;
+  color: #fff;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #cce5ff;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.modal-body img {
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.modal-footer {
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Form Inputs */
+.form-control {
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+/* Image in table */
+.table img {
+  border-radius: 5px;
+  object-fit: cover;
+  width: 60px;
+  height: 80px;
+}
+
+/* Toastify adjustments */
+.Toastify__toast {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Loader / No data text */
+.table td[colspan] {
+  font-weight: 500;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    margin: 12px 12px 12px 12px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    margin: 12px 12px 12px 12px;
+  }
+}
+
+@media (max-width: 425px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .table {
+    min-width: 500px;
+  }
+}

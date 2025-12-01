@@ -1,0 +1,138 @@
+/* .profileimg {
+    width: 90px;
+    height: 98px;
+    top: 0px;
+    margin-right: -610%;
+} */
+
+
+
+/* .container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.card img.profile-img {
+    display: block;
+    margin: 15px auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+h4.fw-bold {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.input-group .form-control {
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+.input-group .input-group-text {
+    border-radius: 0 5px 5px 0;
+    background-color: #f0f0f0;
+    border-left: none;
+}
+
+.btn-primary {
+    background-color: #3366ff;
+    border: none;
+    padding: 8px 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #254eda;
+}
+
+.text-danger {
+    font-size: 0.85rem;
+}
+
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-md-5,
+    .col-md-7 {
+        border-right: none !important;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    .col-md-7 form {
+        text-align: left; 
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        padding: 15px;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+    .input-group .form-control {
+        font-size: 0.9rem;
+    }
+} */
+
+
+/* Profile card container */
+.profile-card {
+    padding: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Profile image */
+.profile-card img {
+    width: 70px;
+    height: 80px;
+    object-fit: contain;
+    border: none;
+    border-radius: 0%;
+}
+
+/* Form inputs */
+.profile-card .form-control {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* Password visibility toggle */
+.input-group-text {
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+/* Error message styling */
+.text-danger {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+}
+
+/* Update password button */
+.profile-card .btn-primary {
+    margin-top: 0.5rem;
+}

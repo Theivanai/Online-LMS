@@ -1,0 +1,53 @@
+.user-panel-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.user-sidebar {
+    width: 240px;
+    height: 218vh;
+    position: fixed;
+    overflow-y: auto;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-sidebar .sidebar-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.user-sidebar .nav-item {
+    margin-bottom: 0.5rem;
+}
+
+.user-sidebar .nav-item.active {
+    background-color: #0d6efd;
+    /* Bootstrap primary */
+    border-radius: 0.25rem;
+}
+
+.user-sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: #fff;
+}
+
+.user-sidebar .logout {
+    margin-top: 1rem;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #dc3545;
+    /* Bootstrap danger */
+    cursor: pointer;
+}
+
+/* Main Content */
+.user-main-content {
+    margin-left: 250px;
+    padding: 30px;
+    width: 100%;
+}

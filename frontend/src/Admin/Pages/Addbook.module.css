@@ -1,0 +1,100 @@
+/* MAIN CARD STYLE */
+.addBookCard {
+    border-radius: 12px;
+    border: none;
+    padding: 25px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* FORM TITLE */
+.formTitle {
+    text-align: center;
+    font-weight: 700;
+    color: #0d6efd;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+
+/* LABEL STYLE */
+.label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+    display: block;
+}
+
+
+/* INPUT FIELDS */
+.inputField {
+    border-radius: 6px;
+    border: 1px solid #ccc !important;
+    padding: 10px;
+    font-size: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+/* Remove bootstrap outline */
+.inputField:focus {
+    /* border: 1px solid #0d6efd !important; */
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* FILE INPUT */
+.fileInput {
+    padding: 8px;
+    border-radius: 6px;
+    /* border: 1px solid #ccc !important; */
+    background: #f8f9fa;
+}
+
+.fileInput:focus {
+    /* border: 1px solid #0d6efd !important; */
+    box-shadow: none !important;
+}
+
+
+/* SUBMIT BUTTON */
+.submitBtn {
+    width: 100%;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.submitBtn:hover {
+    background-color: #0a923d;
+    /* darker green */
+}
+
+/* Disable state */
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .addBookCard {
+        padding: 20px;
+    }
+}
