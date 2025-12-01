@@ -16,7 +16,7 @@ const RegisterForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-            .post(`http://localhost:8000/api/user/register`, { name, email, password })
+            .post(`${process.env.REACT_APP_BASE_URL}/api/user/register`, { name, email, password })
             .then((res) => {
                 toast.success("User Registered")
                 navigate("/login");
