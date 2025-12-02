@@ -266,7 +266,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import "react-toastify/dist/ReactToastify.css";
 
-import styles from "./BookList.module.css";
+import styles from "./Booklist.module.css";
 
 function BookList() {
   const dispatch = useDispatch();

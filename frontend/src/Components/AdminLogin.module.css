@@ -128,7 +128,7 @@
 
 
 
-.admin-login-page {
+/* .admin-login-page {
     position: relative;
     height: 100vh;
     background: url('./Assets/library_3.jpg') no-repeat center center/cover;
@@ -188,7 +188,7 @@
     background-color: #218838;
 }
 
-/* Top Right User Icon */
+
 .top-right-user-icon {
     position: absolute;
     top: 20px;
@@ -210,4 +210,147 @@
     font-size: 13px;
     margin-top: -10px;
     margin-bottom: 10px;
+} */
+
+
+
+
+/* PAGE BACKGROUND*/
+.adminLoginPage {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #dbeafe, #eff6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+}
+
+/*TOP RIGHT USER ICON*/
+.topRightUserIcon {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #0d6efd;
+    transition: 0.3s;
+}
+
+.topRightUserIcon:hover {
+    color: #084298;
+    transform: scale(1.1);
+}
+
+/* LOGIN CARD*/
+.adminLoginCard {
+    width: 350px;
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/*TITLE */
+.adminLoginTitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #0d6efd;
+}
+
+/* FORM INPUTS */
+.formControl {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.formControl:focus {
+    border-color: #0d6efd;
+}
+
+/* Red border if error */
+.invalidInput {
+    border-color: #dc3545 !important;
+}
+
+/*PASSWORD INPUT GROUP*/
+.passwordContainer {
+    width: 100%;
+}
+
+.inputGroup {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.inputGroup input {
+    flex: 1;
+}
+
+.inputGroupText {
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-left: none;
+    border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 15px;
+}
+
+.inputGroupText:hover {
+    background: #e2e8f0;
+}
+
+/*ERROR TEXT*/
+.invalidFeedback {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* LOGIN BUTTON */
+.adminLoginBtn {
+    width: 100%;
+    padding: 12px;
+    background: #0d6efd;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.adminLoginBtn:hover {
+    background: #084298;
+}
+
+/*ANIMATION*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

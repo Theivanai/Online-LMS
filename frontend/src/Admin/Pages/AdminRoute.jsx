@@ -76,6 +76,7 @@ const AdminRoute = () => {
         //         </Routes>
         //     </div>
         // </div>
+        
         <div className={styles.adminContainer}>
 
             <div className={styles.sidebar}>
@@ -105,6 +106,16 @@ const AdminRoute = () => {
             </div>
 
             <div className={styles.mainContent}>
+                <Routes>
+                    <Route path="/" element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/bookhistory" element={<Bookhistory />} />
+                    <Route path="/addbook" element={<Addbook />} />
+                    <Route path="/booklist" element={<Booklist />} />
+                    <Route path="/userlist" element={<Userlist />} />
+                    <Route path="/add-new-admin" element={<AddNewAdmin />} />
+                    <Route path="/forgotpassword" element={<ForgotPassword />} />
+                </Routes>
             </div>
 
         </div>

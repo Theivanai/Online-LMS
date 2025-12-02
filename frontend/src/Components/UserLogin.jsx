@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import 'react-toastify/dist/ReactToastify.css';
-import './UserLogin.css';
+import styles from './UserLogin.module.css';
 import { loginRequest } from '../../src/User/Pages/Redux/Slices/userSlice';
 
 
@@ -28,7 +28,7 @@ const UserLogin = () => {
         }
     }, [navigate]);
 
-    // ✅ Handle login success or error once
+    // Handle login success or error once
     useEffect(() => {
         if (user && !toastShown) {
             const username = user.name || user.email || "User";
@@ -64,7 +64,8 @@ const UserLogin = () => {
     });
 
     return (
-        <div className="user-login-page">
+        <div className={styles.userLoginPage}>
+
             <div className="login-card">
                 <h2 className="user-login-title">USER LOGIN</h2>
 
