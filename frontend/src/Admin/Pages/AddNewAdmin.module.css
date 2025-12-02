@@ -1,4 +1,4 @@
-.container {
+/* .container {
     min-height: 50vh;
 }
 
@@ -33,7 +33,6 @@ h4 {
 }
 
 .form-control:focus {
-    /* border-color: #0d6efd; */
     box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.2);
 }
 
@@ -42,7 +41,6 @@ h4 {
     border: 1px solid #ddd;
     border-radius: 0 10px 10px 0;
     font-size: 1.2rem;
-    /* color: #0d6efd; */
 }
 
 .btn {
@@ -69,4 +67,75 @@ h4 {
 .Toastify__toast--success {
     background: #198754 !important;
     color: #fff !important;
+} */
+
+
+
+
+
+
+
+
+
+/* AddAdmin.module.css */
+
+/* Container wrapper */
+.containerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    /* mt-5 equivalent */
+}
+
+/* Card styles */
+.cardWrapper {
+    max-width: 400px;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+}
+
+/* Heading */
+.heading {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    color: #0d6efd;
+    /* Bootstrap primary color */
+}
+
+/* Input fields */
+.inputField {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Invalid input styling */
+.invalidInput {
+    border-color: #dc3545 !important;
+    /* Bootstrap danger color */
+}
+
+/* Input group for password */
+.inputGroup {
+    position: relative;
+}
+
+/* Eye icon */
+.eyeIcon {
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+/* Submit button */
+.submitButton {
+    width: 100%;
+    font-weight: 700;
+}
+
+/* Margin bottom for form groups */
+.formGroup {
+    margin-bottom: 1rem;
 }
