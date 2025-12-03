@@ -141,7 +141,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import 'react-toastify/dist/ReactToastify.css';
 
-import styles from './UserLogin.module.css';  
+import styles from './UserLogin.module.css';
 import { loginRequest } from '../../src/User/Pages/Redux/Slices/userSlice';
 
 const UserLogin = () => {
@@ -198,9 +198,9 @@ const UserLogin = () => {
     });
 
     return (
-        <div className={styles["user-login-page"]}>
-            <div className={styles["login-card"]}>
-                <h2 className={styles["user-login-title"]}>USER LOGIN</h2>
+        <div className={styles.userloginpage}>
+            <div className={styles.logincard}>
+                <h2 className={styles.userlogintitle}>USER LOGIN</h2>
 
                 <form onSubmit={formik.handleSubmit}>
                     {/* Email */}
@@ -252,13 +252,13 @@ const UserLogin = () => {
                         <div className={styles.errorText}>{formik.errors.password}</div>
                     )}
 
-              
+
                     <div className={styles.registerRow}>
                         <p>Don't have an account?</p>
                         <span onClick={() => navigate('/register-user')} className={styles.linkText}>Register</span>
                     </div>
 
-                  
+
                     <button type="submit" className={styles.loginButton}>LOGIN</button>
                 </form>
             </div>
