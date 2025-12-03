@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Routes, Route, useNavigate, Navigate, useLocation } from "react-router-dom";
 import Dashboard from './Dashboard';
 import Bookhistory from './Bookhistory';
-import Addbook from './AddBook';
+import AddBook from './AddBook';
 import Booklist from './Booklist';
 import Userlist from './Userlist';
 import AddNewAdmin from './AddNewAdmin';
@@ -110,7 +110,7 @@ const AdminRoute = () => {
                     <Route path="/" element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/bookhistory" element={<Bookhistory />} />
-                    <Route path="/addbook" element={<Addbook />} />
+                    <Route path="/addbook" element={<AddBook />} />
                     <Route path="/booklist" element={<Booklist />} />
                     <Route path="/userlist" element={<Userlist />} />
                     <Route path="/add-new-admin" element={<AddNewAdmin />} />

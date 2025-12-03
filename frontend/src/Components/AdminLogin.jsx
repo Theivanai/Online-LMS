@@ -107,7 +107,7 @@ import { useDispatch } from 'react-redux';
 import { adminLoginRequest } from '../Redux/admin/adminSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import { FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
-import styles from './AdminLogin.module.css'; // ⬅️ UPDATED
+import styles from './AdminLogin.module.css';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);

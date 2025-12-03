@@ -48,102 +48,86 @@ const AddAdmin = () => {
     }, [success, dispatch]);
 
     return (
-        // <div className="container d-flex justify-content-center align-items-center mt-5">
-        //     <div className="card shadow p-4" style={{ maxWidth: '400px', width: '100%' }}>
-        //         <h4 className="mb-4 text-center fw-bold text-primary">ADD NEW ADMIN</h4>
-        //         <form onSubmit={formik.handleSubmit} noValidate>
-        //             {/* Name */}
-        //             <div className="mb-3">
-        //                 <label htmlFor="name" className="form-label">Name</label>
-        //                 <input
-        //                     type="text"
-        //                     id="name"
-        //                     name="name"
-        //                     className={`form-control ${formik.touched.name && formik.errors.name ? 'is-invalid' : ''}`} style={{ outline: 'none', boxShadow: 'none' }}
-        //                     value={formik.values.name}
-        //                     onChange={formik.handleChange}
-        //                     onBlur={formik.handleBlur}
-        //                 />
-        //                 {formik.touched.name && formik.errors.name && (
-        //                     <div className="invalid-feedback">{formik.errors.name}</div>
-        //                 )}
-        //             </div>
+        <div className={styles.container}>
+            <div className={styles.card}>
+                <h4 className={styles.title}>ADD NEW ADMIN</h4>
 
-        //             {/* Email */}
-        //             <div className="mb-3">
-        //                 <label htmlFor="email" className="form-label">Email</label>
-        //                 <input
-        //                     type="email"
-        //                     id="email"
-        //                     name="email"
-        //                     className={`form-control ${formik.touched.email && formik.errors.email ? 'is-invalid' : ''}`} style={{ outline: 'none', boxShadow: 'none' }}
-        //                     value={formik.values.email}
-        //                     onChange={formik.handleChange}
-        //                     onBlur={formik.handleBlur}
-        //                 />
-        //                 {formik.touched.email && formik.errors.email && (
-        //                     <div className="invalid-feedback">{formik.errors.email}</div>
-        //                 )}
-        //             </div>
-
-        //             {/* Password */}
-        //             <div className="mb-3 position-relative">
-        //                 <label htmlFor="password" className="form-label">Password</label>
-        //                 <div className="input-group">
-        //                     <input
-        //                         type={showPassword ? "text" : "password"}
-        //                         id="password"
-        //                         name="password"
-        //                         maxLength={8}
-        //                         className={`form-control ${formik.touched.password && formik.errors.password ? 'is-invalid' : ''}`} style={{ outline: 'none', boxShadow: 'none' }}
-        //                         value={formik.values.password}
-        //                         onChange={formik.handleChange}
-        //                         onBlur={formik.handleBlur}
-        //                     />
-        //                     <span className="input-group-text" onClick={() => setShowPassword(prev => !prev)} style={{ cursor: 'pointer', marginBottom: '15px' }}>
-        //                         {showPassword ? <FaEye /> : <FaEyeSlash />}
-        //                     </span>
-
-        //                     {formik.touched.password && formik.errors.password && (
-        //                         <div className="invalid-feedback">{formik.errors.password}</div>
-        //                     )}
-        //                 </div>
-        //             </div>
-
-        //             {/* Submit */}
-        //             <button type="submit" className="btn btn-primary w-100 fw-bold" disabled={loading}>
-        //                 {loading ? "Adding..." : "ADD ADMIN"}
-        //             </button>
-        //         </form>
-
-        //         <ToastContainer position="top-center" autoClose={1200} closeButton={false} />
-        //     </div>
-        // </div>
-        <div className={styles.containerWrapper}>
-            <div className={styles.cardWrapper}>
-                <h4 className={styles.heading}>ADD NEW ADMIN</h4>
                 <form onSubmit={formik.handleSubmit} noValidate>
-                    <div className={styles.formGroup}>
-                        <label htmlFor="name" className="form-label">Name</label>
+                    {/* Name */}
+                    <div className={styles.fieldBox}>
+                        <label htmlFor="name" className={styles.label}>
+                            Name
+                        </label>
                         <input
                             type="text"
                             id="name"
                             name="name"
-                            className={`${styles.inputField} ${formik.touched.name && formik.errors.name ? 'is-invalid' : ''}`}
+                            className={`${styles.input} ${formik.touched.name && formik.errors.name ? styles.invalid : ""}`}
                             value={formik.values.name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
                         {formik.touched.name && formik.errors.name && (
-                            <div className="invalid-feedback">{formik.errors.name}</div>
+                            <div className={styles.errorText}>{formik.errors.name}</div>
                         )}
                     </div>
-                    ...
+
+                    {/* Email */}
+                    <div className={styles.fieldBox}>
+                        <label htmlFor="email" className={styles.label}>
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            className={`${styles.input} ${formik.touched.email && formik.errors.email ? styles.invalid : ""}`}
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+                        {formik.touched.email && formik.errors.email && (
+                            <div className={styles.errorText}>{formik.errors.email}</div>
+                        )}
+                    </div>
+
+                    {/* Password */}
+                    <div className={styles.fieldBox}>
+                        <label htmlFor="password" className={styles.label}>
+                            Password
+                        </label>
+                        <div className={styles.passwordWrapper}>
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                id="password"
+                                name="password"
+                                maxLength={8}
+                                className={`${styles.input} ${formik.touched.password && formik.errors.password ? styles.invalid : ""}`}
+                                value={formik.values.password}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                            />
+                            <span
+                                className={styles.eyeIcon}
+                                onClick={() => setShowPassword((prev) => !prev)}
+                            >
+                                {showPassword ? <FaEye /> : <FaEyeSlash />}
+                            </span>
+                        </div>
+                        {formik.touched.password && formik.errors.password && (
+                            <div className={styles.errorText}>{formik.errors.password}</div>
+                        )}
+                    </div>
+
+                    {/* Button */}
+                    <button type="submit" className={styles.submitBtn} disabled={loading}>
+                        {loading ? "Adding..." : "ADD ADMIN"}
+                    </button>
                 </form>
+
+                <ToastContainer position="top-center" autoClose={1200} closeButton={false} />
             </div>
         </div>
-
     );
 };
-
 export default AddAdmin;

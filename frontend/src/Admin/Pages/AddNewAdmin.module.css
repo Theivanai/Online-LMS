@@ -1,141 +1,95 @@
-/* .container {
-    min-height: 50vh;
-}
-
-.card {
-    border-radius: 20px;
-    border: none;
-    background: #ffffff;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-h4 {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-}
-
-.form-label {
-    font-weight: 600;
-    color: #333;
-}
-
-.form-control {
-    border-radius: 10px;
-    padding: 10px 14px;
-    font-size: 0.95rem;
-    border: 1px solid #ddd;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.form-control:focus {
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.2);
-}
-
-.input-group-text {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 0 10px 10px 0;
-    font-size: 1.2rem;
-}
-
-.btn {
-    border-radius: 10px;
-    padding: 12px;
-    font-size: 1rem;
-    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.invalid-feedback {
-    font-size: 0.85rem;
-}
-
-
-.Toastify__toast {
-    border-radius: 12px !important;
-    font-weight: 500;
-}
-
-.Toastify__toast--success {
-    background: #198754 !important;
-    color: #fff !important;
-} */
-
-
-
-
-
-
-
-
-
-/* AddAdmin.module.css */
-
-/* Container wrapper */
-.containerWrapper {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    /* mt-5 equivalent */
+    margin-top: 40px;
 }
 
-/* Card styles */
-.cardWrapper {
-    max-width: 400px;
+.card {
     width: 100%;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 0.5rem;
+    max-width: 420px;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Heading */
-.heading {
-    margin-bottom: 1.5rem;
+.title {
     text-align: center;
     font-weight: 700;
     color: #0d6efd;
-    /* Bootstrap primary color */
+    margin-bottom: 20px;
+    font-size: 22px;
 }
 
-/* Input fields */
-.inputField {
-    outline: none;
-    box-shadow: none;
+.fieldBox {
+    margin-bottom: 18px;
 }
 
-/* Invalid input styling */
-.invalidInput {
-    border-color: #dc3545 !important;
-    /* Bootstrap danger color */
+.label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
 }
 
-/* Input group for password */
-.inputGroup {
-    position: relative;
-}
-
-/* Eye icon */
-.eyeIcon {
-    cursor: pointer;
-    margin-bottom: 15px;
-}
-
-/* Submit button */
-.submitButton {
+.input {
     width: 100%;
-    font-weight: 700;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
 }
 
-/* Margin bottom for form groups */
-.formGroup {
-    margin-bottom: 1rem;
+.input:focus {
+    border-color: #0d6efd;
+}
+
+.invalid {
+    border-color: #dc3545 !important;
+}
+
+.errorText {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.passwordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.eyeIcon {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+
+.submitBtn {
+    width: 100%;
+    background-color: #0d6efd;
+    color: #ffffff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submitBtn:hover {
+    background-color: #0b5ed7;
+}
+
+.submitBtn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
 }
