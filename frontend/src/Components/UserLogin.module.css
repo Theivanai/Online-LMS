@@ -66,17 +66,18 @@
 } */
 
 
-.userLoginPage {
+/* Page Background */
+.user-login-page {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #4c6ef5, #228be6);
+    background: url('./Assets/library_2.jpg') no-repeat center center/cover;
     padding: 20px;
 }
 
 /* Login Card */
-.loginCard {
+.login-card {
     width: 100%;
     max-width: 380px;
     background: #ffffff;
@@ -86,7 +87,7 @@
     animation: fadeIn 0.4s ease;
 }
 
-.userLoginTitle {
+.user-login-title {
     text-align: center;
     margin-bottom: 20px;
     font-weight: 700;
@@ -94,8 +95,8 @@
     font-size: 26px;
 }
 
-/* Input fields */
-.formControl {
+/* Input Field */
+.inputField {
     width: 100%;
     padding: 12px 14px;
     margin-bottom: 14px;
@@ -103,21 +104,21 @@
     border-radius: 8px;
     background: #fafafa;
     font-size: 15px;
-    transition: all 0.2s ease;
+    transition: 0.2s ease-in-out;
 }
 
-.formControl:focus {
+.inputField:focus {
     border-color: #4c6ef5;
     background: #ffffff;
 }
 
 /* Invalid Input */
-.invalidInput {
+.is-invalid {
     border-color: #e03131 !important;
 }
 
-/* Error text */
-.invalidFeedback {
+/* Error Message */
+.errorText {
     color: #e03131;
     font-size: 13px;
     margin-top: -10px;
@@ -129,6 +130,7 @@
     width: 100%;
 }
 
+/* Input group (password + eye icon) */
 .inputGroup {
     display: flex;
     align-items: center;
@@ -141,18 +143,18 @@
 
 .inputGroup input {
     flex: 1;
-    border: none;
+    border: none !important;
     padding: 12px 14px;
     background: transparent;
 }
 
 .inputGroup:focus-within {
     border-color: #4c6ef5;
-    background: #fff;
+    background: #ffffff;
 }
 
-/* Eye icon */
-.inputGroupText {
+/* Eye Icon */
+.eyeIcon {
     padding: 10px 12px;
     font-size: 17px;
     cursor: pointer;
@@ -160,7 +162,14 @@
     user-select: none;
 }
 
-/* Register & Login */
+/* Register Link Row */
+.registerRow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
 .linkText {
     color: #1c7ed6;
     font-weight: 600;
@@ -190,7 +199,7 @@
     background: #16326a;
 }
 
-/* Animation */
+/* Fade animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
