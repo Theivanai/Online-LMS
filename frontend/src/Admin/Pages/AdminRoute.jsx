@@ -76,7 +76,7 @@ const AdminRoute = () => {
         //         </Routes>
         //     </div>
         // </div>
-        
+
         <div className={styles.adminContainer}>
 
             <div className={styles.sidebar}>
