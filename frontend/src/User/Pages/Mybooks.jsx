@@ -16,7 +16,7 @@ const MyBooks = () => {
     }, [dispatch]);
 
     const handleView = (pdfPath) => {
-        setSelectedPDF(`${process.env.REACT_BASE_URL}/uploads/pdfs/${pdfPath}?token=${localStorage.getItem("token")}#toolbar=0&navpanes=0&scrollbar=0`);
+        setSelectedPDF(`${process.env.REACT_APP_BACKEND_URL}/uploads/pdfs/${pdfPath}?token=${localStorage.getItem("token")}#toolbar=0&navpanes=0&scrollbar=0`);
         setshowmodal(true);
     };
 

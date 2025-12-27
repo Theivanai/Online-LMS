@@ -19,7 +19,7 @@ const ViewBooks = () => {
     const [categoryFilter, setCategoryFilter] = useState('all');
     const [selectedBook, setSelectedBook] = useState(null);
 
-    // ✅ Correct useSelector mapping
+    // Correct useSelector mapping
 
     useEffect(() => {
         dispatch(fetchBooksRequest());

@@ -1,68 +1,45 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const path = require('path');
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const path = require("path");
 
-
-const dotenv = require('dotenv');
+const connectDB = require("./config/db");
 
 dotenv.config();
 
 
+connectDB();
 
 const app = express();
 
-app.use(cors()); //enable for frontend requests
-app.use(express.json()); //parses incoming JSON requests
+// Middlewares
+app.use(cors());
+app.use(express.json());
 
-// Static folder for uploaded images
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Static uploads folder
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI).then(() => {
-    console.log('MongoDB connected');
-}).catch(err => {
-    console.error('MongoDB connection error:', err);
-});
+// Routes
+app.use("/api/admin", require("./Routes/adminRoutes"));
 
-// Import routes
-const bookRoutes = require('./Routes/bookRoutes');
-app.use('/api/book', bookRoutes);
+app.use("/api/auth", require("./Routes/authRoutes"));
 
-//userroutes
-const userRoutes = require('./Routes/userRoutes');
-app.use('/api/user', userRoutes);
+app.use("/api/book-history", require("./Routes/bookHistory"));
 
-//dashboard
-const dashboard = require('./Routes/dashboard');
-app.use('/api/dashboard', dashboard);
+app.use("/api/book", require("./routes/bookRoutes"));
 
-//issueRoutes
-const issueRoutes = require('./Routes/issueRoutes');
-app.use('/api/book', issueRoutes);
+app.use("/api/dashboard", require("./Routes/dashboard"));
 
-//adminRoutes
-const adminRoutes = require('./Routes/AdminRoutes');
-app.use('/api/admin', adminRoutes);
+app.use("/api/issue", require("./routes/issueRoutes"));
 
-//userrouter
-const userRouter = require('./Routes/userRouter');
-app.use('/api/users', userRouter);
+app.use("/api/mybooks", require("./Routes/mybooks"));
 
-//bookhistory(admin panel)
-const bookhistory = require('./Routes/BookHistory');
-app.use("/api/book-history", bookhistory);
+app.use("/api/payment", require("./Routes/payment"));
 
-//payment
-const payment = require("./Routes/payment");
-app.use("/api/payment", payment);
-
-//mybooks
-const mybooks = require("./Routes/Mybooks");
-app.use("/api/mybooks", mybooks);
+app.use("/api/user", require("./Routes/userRoutes"));
 
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

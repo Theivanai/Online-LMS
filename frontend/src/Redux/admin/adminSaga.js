@@ -46,7 +46,7 @@ import {
 function* fetchAdminDashboardSaga() {
   try {
     const token = localStorage.getItem('token');
-    const response = yield call(axios.get, `${process.env.REACT_APP_BASE_URL}/api/dashboard/metrics`, {
+    const response = yield call(axios.get, `${process.env.REACT_APP_BACKEND_URL}/api/dashboard/metrics`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -60,7 +60,7 @@ function* fetchAdminDashboardSaga() {
 // ADMIN REGISTRATION SAGA
 function* registerAdminSaga(action) {
   try {
-    const response = yield call(axios.post, `${process.env.REACT_APP_BASE_URL}/api/admin/admin-register`, action.payload);
+    const response = yield call(axios.post, `${process.env.REACT_APP_BACKEND_URL}/api/admin/admin-register`, action.payload);
     yield put(registerAdminSuccess());
     localStorage.setItem('token', response.data.token);
     toast.success('Admin added successfully!');
@@ -81,10 +81,9 @@ let loginToastShown = false;
 
 function* handleAdminLogin(action) {
   try {
-    const response = yield call(axios.post, `${process.env.REACT_APP_BASE_URL}/api/admin/admin/login`, {
-      ...action.payload,
-      role: 'admin',
-    });
+    const { email, password } = action.payload;
+
+    const response = yield call(axios.post, `${process.env.REACT_APP_BACKEND_URL}/api/admin/adminlogin`, { email, password });
 
     // Save token & data
     localStorage.setItem('token', response.data.token);
@@ -95,7 +94,6 @@ function* handleAdminLogin(action) {
 
 
     yield put(adminLoginSuccess(response.data));
-    // action.payload.toast.success('Login successful');
 
     if (!loginToastShown) {
       loginToastShown = true;
@@ -110,16 +108,14 @@ function* handleAdminLogin(action) {
     }, 1500);
   } catch (error) {
     yield put(adminLoginFailure(error.response?.data?.message || 'Admin login failed!'));
-    // action.payload.toast.error(error.response?.data?.message || 'Login failed');
   }
 
   if (!loginToastShown) {
     loginToastShown = true;
-    // action.payload.toast.error(error.response?.data?.message || 'Login failed');
   }
 }
 
-// ROOT ADMIN SAGA
+
 export default function* adminSaga() {
   yield all([
     takeLatest(fetchDashboardRequest.type, fetchAdminDashboardSaga),

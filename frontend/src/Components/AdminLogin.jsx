@@ -99,7 +99,7 @@
 
 
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -109,7 +109,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
 import styles from './AdminLogin.module.css';
 
-const Login = () => {
+const AdminLogin = () => {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -136,7 +136,7 @@ const Login = () => {
                 .max(8, 'Max 8 characters'),
         }),
         onSubmit: (values) => {
-            dispatch(adminLoginRequest({ ...values, toast, navigate }));
+            dispatch(adminLoginRequest(values));
         },
     });
 
@@ -223,4 +223,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default AdminLogin;

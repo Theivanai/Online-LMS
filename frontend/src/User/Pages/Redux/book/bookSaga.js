@@ -9,7 +9,7 @@ import {
 
 function* handleFetchBooks() {
   try {
-    const response = yield call(axios.get, `${process.env.REACT_BASE_URL}/api/book/all`);
+    const response = yield call(axios.get, `${process.env.REACT_APP_BACKEND_URL}/api/book/all`);
     yield put(fetchBooksSuccess(response.data));
   } catch (error) {
     yield put(fetchBooksFailure(error.response?.data?.message || error.message));

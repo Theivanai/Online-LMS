@@ -10,7 +10,7 @@ const IssueBook = () => {
     const token = localStorage.getItem('token');
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_BASE_URL}/api/book/all`, {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/book/all`, {
             headers: { Authorization: `Bearer ${token}` }
         }).then(res => {
             setBooks(res.data.filter(book => book.status === 'Available'));
@@ -19,7 +19,7 @@ const IssueBook = () => {
 
     const handleIssue = async () => {
         try {
-            await axios.put(`${process.env.REACT_BASE_URL}/api/book/issue/${bookId}`, {
+            await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/book/issue/${bookId}`, {
                 issuedTo
             }, {
                 headers: {

@@ -14,7 +14,7 @@ function* checkBookStatusSaga(action) {
         const { bookId, duration } = action.payload;
         const token = localStorage.getItem('token');
         const res = yield call(() =>
-            axios.get(`${process.env.REACT_BASE_URL}/api/payment/book-status/${bookId}`, {
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/payment/book-status/${bookId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             })
         );
@@ -50,7 +50,7 @@ function* fakePaymentSaga(action) {
         // 1. Verify payment (records history)
         yield call(
             axios.post,
-            `${process.env.REACT_BASE_URL}/api/payment/verify`,
+            `${process.env.REACT_APP_BACKEND_URL}/api/payment/verify`,
             { bookId, duration, place, amountPaid, startDate, endDate },
             { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -58,7 +58,7 @@ function* fakePaymentSaga(action) {
         // 2. Reduce stock
         yield call(
             axios.put,
-            `${process.env.REACT_BASE_URL}/api/payment/reduce-stock/${bookId}`,
+            `${process.env.REACT_APP_BACKEND_URL}/api/payment/reduce-stock/${bookId}`,
             {},
             { headers: { Authorization: `Bearer ${token}` } }
         );

@@ -9,7 +9,7 @@ import {
 
 function* fetchUsersSaga() {
     try {
-        const response = yield call(axios.get, `${process.env.REACT_BASE_URL}/api/user/all`, {
+        const response = yield call(axios.get, `${process.env.REACT_APP_BACKEND_URL}/api/user/all`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },

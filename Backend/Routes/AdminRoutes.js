@@ -18,7 +18,7 @@ router.post('/admin-register', [
 
 
 //admin & user login
-router.post('/admin/login', adminController.loginAdmin);
+router.post('/adminlogin', adminController.loginAdmin);
 
 router.post('/user/login', adminController.loginUser);
 

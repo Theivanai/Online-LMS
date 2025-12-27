@@ -10,7 +10,7 @@ function* fetchMyBooksSaga() {
 
     try {
         const token = localStorage.getItem('token');
-        const res = yield call(() => axios.get(`${process.env.REACT_BASE_URL}/api/mybooks/my-books`, {
+        const res = yield call(() => axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/mybooks/my-books`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

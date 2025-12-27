@@ -10,10 +10,10 @@ function* fetchHistoryWorker() {
     try {
         const token = localStorage.getItem('token');
 
-        const response = yield call(() => axios.get(`${process.env.REACT_BASE_URL}/api/users/book-history`, {
+        const response = yield call(() => axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/users/book-history`, {
             headers: { Authorization: `Bearer ${token}` },
         })
-    );
+        );
 
         yield put(fetchHistorySuccess(response.data));
     } catch (error) {
