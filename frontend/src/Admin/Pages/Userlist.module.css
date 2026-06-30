@@ -1,0 +1,480 @@
+/* .container {
+    max-width: 1000px;
+}
+
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+}
+
+.cardHeader {
+    padding: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+.table {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead tr {
+    background-color: #e9ecef !important;
+}
+
+.table th {
+    font-weight: 600;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.table td {
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+    transition: 0.2s ease;
+}
+
+
+.profileImg {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+.roleBadge {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.admin {
+    background-color: #28a745 !important;
+    color: white;
+}
+
+.user {
+    background-color: #0dcaf0 !important;
+    color: white;
+}
+
+
+.emptyRow {
+    color: #6c757d;
+    font-style: italic;
+    padding: 20px !important;
+}
+
+
+@media (max-width: 768px) {
+
+    .table th,
+    .table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .profileImg {
+        width: 40px;
+        height: 55px;
+    }
+} */
+
+
+
+/* ═══════════════════════════════════════════════════════════
+   Userlist.module.css  –  Improved User List Page Styles
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Page Wrapper ────────────────────────────────────────── */
+.pageWrapper {
+  padding: 24px 28px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.pageTitle {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin: 0;
+}
+
+.pageSubtitle {
+  font-size: 0.99rem;
+  color: #64748b;
+  margin: 3px 0 0;
+}
+
+/* ── Search Box ──────────────────────────────────────────── */
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.searchInput {
+  padding: 9px 36px 9px 36px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  width: 280px;
+  background: #fff;
+  color: #334155;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.searchInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+}
+
+.clearSearch {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 2px 4px;
+  line-height: 1;
+}
+
+.clearSearch:hover { color: #ef4444; }
+
+/* ── Filter Tabs ─────────────────────────────────────────── */
+/* .filterTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filterTab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 999px;
+  background: #fff;
+  color: #475569;
+  font-size: 0.84rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.filterTab:hover {
+  border-color: #2563eb;
+}
+
+.filterTabActive {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.filterTabActive .filterCount {
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+.filterCount {
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+} */
+
+
+/* ── Card ────────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+
+/* ── Error Banner ────────────────────────────────────────── */
+.errorBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fef2f2;
+  border-bottom: 1px solid #fecaca;
+  padding: 12px 20px;
+  color: #b91c1c;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 12px;
+}
+
+.retryBtn {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.retryBtn:hover { background: #dc2626; }
+
+/* ── Table ───────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.table thead tr {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.76rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.tableRow {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.tableRow:hover { background: #f8fafc; }
+
+.table td {
+  padding: 12px 16px;
+  color: #334155;
+  vertical-align: middle;
+}
+
+/* ── Cell Styles ─────────────────────────────────────────── */
+.idCode {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-family: monospace;
+}
+
+.nameCell {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.emailCell {
+  color: #2563eb;
+  font-size: 0.84rem;
+}
+
+.genderTag {
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+/* ── Profile Image & Avatar ──────────────────────────────── */
+.profileImg {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+  display: block;
+  margin: 0 auto;
+}
+
+.avatarFallback {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* ── Role Badge ──────────────────────────────────────────── */
+.roleBadge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.adminBadge {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.userBadge {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* ── Empty State ─────────────────────────────────────────── */
+.emptyState {
+  text-align: center;
+  padding: 48px 20px !important;
+  color: #94a3b8;
+}
+
+.emptyState p {
+  margin: 10px 0 14px;
+  font-size: 0.92rem;
+}
+
+.clearBtn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 8px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clearBtn:hover { background: #1d4ed8; }
+
+/* ── Skeleton ────────────────────────────────────────────── */
+.skeletonRow td {
+  padding: 14px 16px;
+}
+
+.skeletonCell {
+  height: 14px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Pagination ──────────────────────────────────────────── */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pageInfo {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.pageButtons {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.pageBtn {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  color: #475569;
+  font-size: 0.83rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pageBtn:hover:not(:disabled) {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageBtnActive {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff !important;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .pageWrapper { padding: 16px; }
+
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .searchInput { width: 100%; }
+  .searchBox   { width: 100%; }
+
+  .table th, .table td {
+    padding: 10px 10px;
+    font-size: 0.8rem;
+  }
+}

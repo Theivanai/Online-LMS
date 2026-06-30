@@ -1,0 +1,523 @@
+/* .bellBtn {
+    position: relative;
+    background: #fff;
+    border: none;
+}
+
+.bellWrapper {
+    position: relative;
+}
+
+
+.bellBadge {
+    position: absolute !important;
+    top: -12px !important;
+    right: -12px !important;
+   
+}
+
+
+
+.notificationCard {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    margin-top: 8px;
+    z-index: 999;
+}
+
+
+.adminname {
+    color: #007bff;
+    font-weight: 600;
+}
+
+
+.cardPrimary {
+    background-color: #007bff !important;
+    color: #fff !important;
+}
+
+.cardWarning {
+    background-color: #ffc107 !important;
+    color: #fff !important;
+}
+
+
+.tableHeader {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.tableLink {
+    color: #007bff;
+    text-decoration: none;
+}
+
+
+.pieWrapper {
+    width: 250px;
+    height: 250px;
+}
+
+
+.summaryCard {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.summaryHeader {
+    background: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.notificationContainer {
+    position: relative;
+}
+
+
+.mt10 {
+    margin-top: 10px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── Layout ─────────────────────────────────────────────── */
+.dashWrapper {
+  padding: 24px 28px;
+  background: #f4f6fb;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ── Top Bar ─────────────────────────────────────────────── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.greeting h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.adminName {
+  color: #2563eb;
+}
+
+.dateTime {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* ── Notification Bell ── */
+.notifWrap {
+  position: relative;
+}
+
+.bellBtn {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #475569;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: all 0.2s;
+}
+
+.bellBtn:hover {
+  background: #f1f5f9;
+  color: #2563eb;
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 999px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid #f4f6fb;
+}
+
+.notifDropdown {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  width: 320px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  z-index: 999;
+  overflow: hidden;
+  animation: fadeDown 0.18s ease;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.notifHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.notifCount {
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+}
+
+.notifEmpty {
+  padding: 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.88rem;
+}
+
+.notifList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.notifItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.notifItem:hover {
+  background: #f8fafc;
+}
+
+.notifAvatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.notifText {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.notifDate {
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+/* ── Stat Cards ──────────────────────────────────────────── */
+.statCard {
+  border-radius: 16px;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.cardBlue   { background: linear-gradient(135deg, #2563eb, #3b82f6); color: #fff; }
+.cardYellow { background: linear-gradient(135deg, #d97706, #fbbf24); color: #fff; }
+.cardGreen  { background: linear-gradient(135deg, #059669, #34d399); color: #fff; }
+.cardRed    { background: linear-gradient(135deg, #dc2626, #f87171); color: #fff; }
+
+.statIcon {
+  font-size: 2.2rem;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.statTitle {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  opacity: 0.88;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  margin: 4px 0 0;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.statTrend {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* ── Table Cards ─────────────────────────────────────────── */
+.tableCard {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.tableCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1e293b;
+  border-bottom: 1px solid #f1f5f9;
+  background: #fafbff;
+}
+
+.seeAllLink {
+  font-size: 0.8rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.seeAllLink:hover {
+  text-decoration: underline;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.dataTable thead tr {
+  background: #f8fafc;
+}
+
+.dataTable th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dataTable tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.dataTable tbody tr:hover {
+  background: #f8fafc;
+}
+
+.dataTable td {
+  padding: 11px 14px;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.idCode {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 0.78rem;
+}
+
+.bookTitle {
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.countBadge {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.emptyCell {
+  text-align: center;
+  padding: 28px !important;
+  color: #94a3b8;
+  font-size: 0.88rem;
+}
+
+/* ── Status Badges ───────────────────────────────────────── */
+.statusBadge {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.statusActive   { background: #dcfce7; color: #166534; }
+.statusIdle     { background: #f1f5f9; color: #64748b; }
+.statusOut      { background: #fee2e2; color: #991b1b; }
+.statusReturned { background: #dbeafe; color: #1e40af; }
+
+/* ── Charts ──────────────────────────────────────────────── */
+.chartCard {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  padding: 18px 20px;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.chartSub {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.barWrapper {
+  height: 230px;
+}
+
+.pieWrapper {
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Skeleton ────────────────────────────────────────────── */
+.skeletonCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.skeletonLine {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Error Box ───────────────────────────────────────────── */
+.errorBox {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 18px 24px;
+  color: #b91c1c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.retryBtn {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.retryBtn:hover {
+  background: #dc2626;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .dashWrapper {
+    padding: 16px;
+  }
+  .statValue {
+    font-size: 1.6rem;
+  }
+  .notifDropdown {
+    width: 280px;
+    right: -10px;
+  }
+}

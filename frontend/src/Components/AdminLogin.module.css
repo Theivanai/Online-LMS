@@ -1,0 +1,400 @@
+/* .adminLoginPage {
+    width: 100%;
+    height: 100vh;
+    background: url('./Assets/library_3.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+}
+
+
+.topRightUserIcon {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #0d6efd;
+    transition: 0.3s;
+}
+
+.topRightUserIcon:hover {
+    color: #084298;
+    transform: scale(1.1);
+}
+
+
+.adminLoginCard {
+    width: 350px;
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 12px;
+    text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+
+.adminLoginTitle {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #0d6efd;
+}
+
+
+.formControl {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.formControl:focus {
+    border-color: #0d6efd;
+}
+
+
+.invalidInput {
+    border-color: #dc3545 !important;
+}
+
+
+.passwordContainer {
+    width: 100%;
+}
+
+.inputGroup {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.inputGroup input {
+    flex: 1;
+}
+
+.inputGroupText {
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-left: none;
+    border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 15px;
+}
+
+.inputGroupText:hover {
+    background: #e2e8f0;
+}
+
+
+.invalidFeedback {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+
+.adminLoginBtn {
+    width: 100%;
+    padding: 12px;
+    background: #0d6efd;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.adminLoginBtn:hover {
+    background: #084298;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================
+   Page / Background
+   ===================== */
+.adminLoginPage {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Replace this URL with any image you prefer */
+    /* background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80'); */
+    background: url('./Assets/library_3.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Dark overlay on top of background image */
+.bgOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 18, 35, 0.58);
+    z-index: 0;
+}
+
+/* =====================
+   Top-right User Button
+   ===================== */
+.topRightUserBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.topRightUserBtn:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.userBtnIcon {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* =====================
+   Glass Card
+   ===================== */
+.adminLoginCard {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+    animation: fadeSlideUp 0.45s ease both;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================
+   Card Header
+   ===================== */
+.cardHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.shieldIconWrapper {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.25);
+    border: 0.5px solid rgba(165, 180, 252, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+}
+
+.shieldIcon {
+    font-size: 22px;
+    color: #a5b4fc;
+}
+
+.adminLabel {
+    font-size: 16px;
+    letter-spacing: 0.18em;
+    /* color: rgba(255, 255, 255, 0.5); */
+    color:#fff;
+    text-transform: uppercase;
+    margin: 0 0 4px;
+}
+
+.adminLoginTitle {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+}
+
+/* =====================
+   Form Fields
+   ===================== */
+.fieldGroup {
+    margin-bottom: 16px;
+}
+
+.fieldLabel {
+    display: block;
+    font-size: 18px;
+    /* color: rgba(255, 255, 255, 0.6); */
+    color: #fff;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0 12px;
+    height: 44px;
+    gap: 10px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.inputWrapper:focus-within {
+    border-color: rgba(165, 180, 252, 0.6);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.inputWrapperError {
+    border-color: rgba(252, 100, 100, 0.65) !important;
+}
+
+.inputIcon {
+    font-size: 14px;
+    /* color: rgba(255, 255, 255, 0.4); */
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.formControl {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+/* .formControl::placeholder {
+    color: rgba(255, 255, 255, 0.28);
+} */
+
+/* Password eye toggle */
+.eyeBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    /* color: rgba(255, 255, 255, 0.4); */
+    color: #fff;
+    font-size: 15px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.eyeBtn:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Validation error text */
+.invalidFeedback {
+    font-size: 12px;
+    color: #fc9090;
+    margin-top: 5px;
+    padding-left: 2px;
+}
+
+/* =====================
+   Submit Button
+   ===================== */
+.adminLoginBtn {
+    width: 100%;
+    height: 46px;
+    margin-top: 8px;
+    background: rgba(99, 102, 241, 0.85);
+    border: 0.5px solid rgba(165, 180, 252, 0.4);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.adminLoginBtn:hover {
+    background: rgba(99, 102, 241, 1);
+}
+
+.adminLoginBtn:active {
+    transform: scale(0.98);
+}
+
+/* =====================
+   Responsive
+   ===================== */
+@media (max-width: 480px) {
+    .adminLoginCard {
+        padding: 2rem 1.25rem;
+    }
+}

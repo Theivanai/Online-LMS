@@ -1,0 +1,102 @@
+.adminContainer {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f5f7fa;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: #0d6efd;
+    color: white;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+/* Sidebar Title */
+.sidebar h4 {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Navigation list */
+.navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each nav item */
+.navItem {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Anchor link */
+.navLink {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.navLink:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ACTIVE tab */
+.active {
+    background: rgba(255, 255, 255, 0.35);
+    font-weight: 700;
+    border-left: 4px solid #fff;
+}
+
+/* Logout button */
+.logout {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Main content */
+.mainContent {
+    flex-grow: 1;
+    padding: 25px;
+    overflow-x: hidden;
+    background: #f9fbff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .navLink {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+}
